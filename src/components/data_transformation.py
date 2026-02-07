@@ -29,10 +29,8 @@ class DataTransformation:
                         'parental level of education',
                         'lunch',
                         'test preparation course',]
-            num_cols = ['math score',
-                        'reading score',
-                        'writing score',
-                        'total score']
+            num_cols = ['reading score',
+                        'writing score']
             
             num_pipeline = Pipeline(steps = [
                 ('simple imputer', SimpleImputer(strategy = 'median')),
@@ -66,8 +64,8 @@ class DataTransformation:
 
             model_obj = self.get_data_transformer_object()
 
-            target_column = 'average score'
-            num_cols = ['math score', 'reading score', 'writing score', 'total score']
+            target_column = 'math score'
+            num_cols = ['reading score', 'writing score']
 
             input_features_train_df = train_df.drop([target_column], axis = 1)
             target_feature_train_df = train_df[target_column]
