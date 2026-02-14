@@ -25,7 +25,7 @@ class ModelTrainer:
     def initiate_model_trainer(self, train_arr, test_arr):
         try:
             logging.info('Split Training and testing data')
-            X_train, y_train, X_test, y_test = (train_arr[:, 1:-1], train_arr[:, -1], test_arr[:, 1:-1], test_arr[:, -1])
+            X_train, y_train, X_test, y_test = (train_arr[:, :-1], train_arr[:, -1], test_arr[:, :-1], test_arr[:, -1])
             
             models = {
                 "Decision Tree": DecisionTreeRegressor(),

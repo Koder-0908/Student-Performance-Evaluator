@@ -39,7 +39,7 @@ class DataTransformation:
 
             cat_pipeline = Pipeline(steps = [
                 ('simple imputer', SimpleImputer(strategy = 'most_frequent')),
-                ('one hot encoder', OneHotEncoder())
+                ('one hot encoder', OneHotEncoder(drop = 'first'))
             ])
 
             logging.info('Numerical columns scaled')
